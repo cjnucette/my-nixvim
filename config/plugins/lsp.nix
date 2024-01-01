@@ -135,8 +135,8 @@
           tsserver.enable = true;
           cssls.enable = true;
           html.enable = true;
+          eslint.enable = true;
           jsonls.enable = true;
-          emmet_ls.enable = true;
           astro.enable = true;
           ltex.enable = true;
         };
