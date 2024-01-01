@@ -4,9 +4,7 @@
   vimAlias = true;
   luaLoader.enable = true;
 
-  # colorschemes.catppuccin.enable = true;
-  colorschemes.tokyonight.enable = true;
-  colorschemes.tokyonight.style = "night";
+  colorschemes.catppuccin.enable = true;
   clipboard.register = ["unnamedplus" "unnamed"];
 
   extraConfigLua = ''
