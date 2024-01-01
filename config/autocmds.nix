@@ -1,18 +1,22 @@
 {
+  autoGroups.user_cmds.clear = true;
   autoCmd = [
     {
       desc = "Use q to close the window";
+      group = "user_cmds";
       event = "FileType";
       pattern = ["help" "man" "fugitive" "qf" "notify" "lspinfo" "checkhealth" "git" "oil"];
       command = "nnoremap <buffer> q :quit<cr>";
     }
     {
       desc = "Highlight yanked objects";
+      group = "user_cmds";
       event = "TextYankPost";
       callback = {__raw = "function() vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 }) end";};
     }
     {
       desc = "Place the cursor on the last place you where in a file and center buffer around it";
+      group = "user_cmds";
       event = "BufRead";
       callback = {
         __raw = ''
@@ -31,6 +35,7 @@
     {
       event = ["BufWinLeave" "BufWritePost" "WinLeave"];
       desc = "Save view with mkview for real files";
+      group = "user_cmds";
       callback = {
         __raw = ''
           function(args)
@@ -42,6 +47,7 @@
     {
       event = "BufWinEnter";
       desc = "Try to load file view if available and enable view saving for real files";
+      group = "user_cmds";
       callback = {
         __raw = ''
           function(args)
