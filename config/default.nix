@@ -8,8 +8,7 @@
   clipboard.register = ["unnamedplus" "unnamed"];
 
   extraConfigLua = ''
-    require('nixvim') -- ~/.config/nvim/lua/nixvim
-    vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
+    vim.opt.shortmess:append({ W = true, c = true, C = true })
     vim.opt.nrformats:append({ 'alpha' })
     vim.opt.fillchars:append({ foldclose = '', foldopen = '›' })
   '';

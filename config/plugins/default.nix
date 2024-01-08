@@ -21,43 +21,24 @@
     lualine-lsp-progress
     {
       plugin = statuscol-nvim;
-      config = ''
-        require('statuscol').setup()
-      '';
+      config = ''lua require('statuscol').setup() '';
     }
     {
       plugin = neodev-nvim;
-      config = ''
-        require('neodev').setup()
-      '';
+      config = ''lua require('neodev').setup() '';
     }
     {
       plugin = package-info-nvim;
-      config = ''
-        local pi = require('package-info')
-        pi.setup()
-
-        vim.keymap.set('n', '<leader>ps', pi.show, { silent = true, noremap = true, desc = "Package-info: Show dependencies version"})
-        vim.keymap.set('n', '<leader>ph', pi.hide, { silent = true, noremap = true, desc = "Package-info: Hide dependencies version"})
-        vim.keymap.set('n', '<leader>ph', pi.toggle, { silent = true, noremap = true, desc = "Package-info: Toggle dependencies version"})
-        vim.keymap.set('n', '<leader>ph', pi.update, { silent = true, noremap = true, desc = "Package-info: Update dependency current line "})
-        vim.keymap.set('n', '<leader>ph', pi.delete, { silent = true, noremap = true, desc = "Package-info: Delete dependency current line "})
-        vim.keymap.set('n', '<leader>ph', pi.install, { silent = true, noremap = true, desc = "Package-info: Install dependency a new dependency"})
-        vim.keymap.set('n', '<leader>ph', pi.change_version, { silent = true, noremap = true, desc = "Package-info: Install a different version of the dependency"})
-      '';
+      config = ''lua require('package-info').setup() '';
     }
     {
       plugin = clear-action-nvim;
-      config = ''
-        require('clear-action').setup()
-      '';
+      config = ''lua require('clear-action').setup() '';
     }
     {
       plugin = maximize-nvim;
       # this sets a default mapping <leader>z
-      config = ''
-        require('maximize').setup()
-      '';
+      config = ''lua require('maximize').setup() '';
     }
     ai-nvim
   ];
