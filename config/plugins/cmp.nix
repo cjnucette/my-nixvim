@@ -64,12 +64,16 @@
             priority = 1;
           }
           {
-            name = "nvim_lua";
+            name = "codeium";
             priority = 2;
           }
           {
-            name = "luasnip";
+            name = "nvim_lua";
             priority = 3;
+          }
+          {
+            name = "luasnip";
+            priority = 4;
           }
           {
             name = "buffer";

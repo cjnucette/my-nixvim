@@ -14,6 +14,7 @@
     ./lsp.nix
     ./conform.nix
     ./cmp.nix
+    ./codeium.nix
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
@@ -40,7 +41,6 @@
       # this sets a default mapping <leader>z
       config = ''lua require('maximize').setup() '';
     }
-    ai-nvim
   ];
 
   plugins = {
@@ -53,12 +53,14 @@
 
     barbecue.enable = true;
     todo-comments.enable = true;
+
     gitsigns.enable = true;
-    fugitive.enable = true;
+    # fugitive.enable = true;
+    neogit.enable = true;
 
     oil.enable = true;
-
     which-key.enable = true;
+
     mini = {
       enable = true;
       modules = {

@@ -8,9 +8,13 @@
   clipboard.register = ["unnamedplus" "unnamed"];
 
   extraConfigLua = ''
-    vim.opt.shortmess:append({ W = true, c = true, C = true })
-    vim.opt.nrformats:append({ 'alpha' })
-    vim.opt.fillchars:append({ foldclose = '', foldopen = '›' })
+      vim.opt.shortmess:append({ W = true, c = true, C = true })
+      vim.opt.nrformats:append({ 'alpha' })
+      vim.opt.fillchars:append({ foldclose = '', foldopen = '›' })
+      vim.g.codeium_filetypes = {
+    markdown = false,
+      	text = false,
+      }
   '';
 
   imports = [

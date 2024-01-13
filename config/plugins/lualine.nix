@@ -38,7 +38,7 @@ in {
 
     theme = mono_theme;
 
-    extensions = ["lualine-lsp-progress"];
+    # extensions = ["lualine-lsp-progress"];
 
     sections = {
       lualine_a = [
@@ -56,26 +56,16 @@ in {
 
         {
           name.__raw = ''
-            function()
-              local mt = { __index = function(_, k) return k end }
-              local server_names = {
-                lua_ls = 'lua-language-server',
-                rust_analyzer = 'rust-analyzer',
-                html = 'html-lsp',
-                jsonls = 'json-lsp',
-                cssls = 'css-lsp',
-                ltex = 'ltex-lsp',
-                svelte = 'svelte-language-server',
-                tsserver = 'typescript-language-server',
-                vimls = 'vim-language-server',
-                dockerls = 'dockerfile-language-server',
-              }
-              setmetatable(server_names, mt)
+                   function()
+                     local client_names = vim.lsp.get_active_clients({ bufnr = 0 })
+            local names = ""
 
-              local client_name = vim.lsp.get_active_clients({ bufnr = 0 })[1]
-
-              return server_names[client_name.name]
+            for _, name in ipair(client_names) do
+             names = names .. " " .. name
             end
+
+                     return names
+                   end
           '';
           # icon = " ";
           # color.fg = "#ffffff";
@@ -104,6 +94,21 @@ in {
         {
           name.__raw = ''
             function()
+			  local status = vim.fn["codeium#GetStatusString"]()
+
+			  if status == ' ON' then
+				  return '󱃖'
+			  elseif status == 'OFF' then
+				  return '⦸'
+			  end
+
+			  return status
+            end
+          '';
+        }
+        {
+          name.__raw = ''
+            function()
               return vim.t.maximized and " " or ""
             end
           '';
@@ -127,5 +132,6 @@ in {
         }
       ];
     };
+    extensions = ["quickfix" "man" "fugitive" "neo-tree" "oil" "toggleterm"];
   };
 }
