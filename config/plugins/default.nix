@@ -54,7 +54,17 @@
     barbecue.enable = true;
     todo-comments.enable = true;
 
-    gitsigns.enable = true;
+    gitsigns = {
+	enable = true;
+	signs = {
+		add.text = "+";
+		change.text = "~";
+		changedelete.text = "␡";
+		delete.text = "-";
+		topdelete.text = "‾";
+		untracked.text = "?";
+	};
+	};
     # fugitive.enable = true;
     neogit.enable = true;
 
