@@ -4,7 +4,10 @@
   vimAlias = true;
   luaLoader.enable = true;
 
-  colorschemes.catppuccin.enable = true;
+  colorschemes.catppuccin = {
+	enable = true;
+	flavour = "macchiato";
+  };
   clipboard.register = ["unnamedplus" "unnamed"];
 
   extraConfigLua = ''
@@ -12,7 +15,7 @@
       vim.opt.nrformats:append({ 'alpha' })
       vim.opt.fillchars:append({ foldclose = '', foldopen = '›' })
       vim.g.codeium_filetypes = {
-    markdown = false,
+		markdown = false,
       	text = false,
       }
   '';
