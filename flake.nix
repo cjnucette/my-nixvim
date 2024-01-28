@@ -5,10 +5,10 @@
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    codeium-nvim = {
-      url = "github:Exafunction/codeium.nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # codeium-nvim = {
+    #   url = "github:Exafunction/codeium.nvim";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     conform-src = {
       url = "github:stevearc/conform.nvim";
       flake = false;
@@ -53,6 +53,7 @@
       url = "github:gera2ld/ai.nvim";
       flake = false;
     };
+	
   };
 
   outputs = {
@@ -121,7 +122,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          inputs.codeium-nvim.overlays.${system}.default
+          # inputs.codeium-nvim.overlays.${system}.default
           inputs.neovim-nightly-overlay.overlay
           nvimPluginsOverlay
         ];
