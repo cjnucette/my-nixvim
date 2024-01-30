@@ -9,6 +9,7 @@
         enable = true;
 
         snippet.expand = "luasnip";
+		autoEnableSources = true;
 
         mapping = {
           "<C-b>" = "cmp.mapping.scroll_docs(-4)";

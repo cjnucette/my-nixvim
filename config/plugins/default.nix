@@ -14,6 +14,7 @@
     ./lsp.nix
     ./conform.nix
     ./cmp.nix
+    ./codeium.nix
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
@@ -85,6 +86,6 @@
 
     markdown-preview.enable = true;
     crates-nvim.enable = true;
-	codeium-vim.enable = true;
+	# codeium-vim.enable = true;
   };
 }

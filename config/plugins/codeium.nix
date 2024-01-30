@@ -3,7 +3,7 @@
     {
       mode = "i";
       key = "<C-g>";
-      action = "function() return vim.fn['codeium#Accept']() end";
+      action = "codeium#Accept()";
       options = {
         silent = true;
         expr = true;
@@ -13,7 +13,7 @@
     {
       mode = "i";
       key = "<C-j>";
-      action = "function() return vim.fn['codeium#CycleCompletions'](1) end";
+      action = "codeium#CycleCompletions(1)";
       options = {
         silent = true;
         expr = true;
@@ -23,7 +23,7 @@
     {
       mode = "i";
       key = "<C-k>";
-      action = "function() return vim.fn['codeium#CycleCompletions'](-1) end";
+      action = "codeium#CycleCompletions(-1)";
       options = {
         silent = true;
         expr = true;
@@ -33,7 +33,7 @@
     {
       mode = "i";
       key = "<C-x>";
-      action = "function() return vim.fn['codeium#Clear']() end";
+      action = "codeium#Clear']()";
       options = {
         silent = true;
         expr = true;
@@ -41,7 +41,8 @@
       };
     }
   ];
-  # plugins.codeium-vim = {
-  #   enable = true;
-  # };
+  plugins.codeium-vim = {
+    enable = true;
+    disableBindings = true;
+  };
 }
