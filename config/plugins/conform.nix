@@ -3,7 +3,7 @@
     keymaps = [
       {
         key = "<leader>f";
-        action = "function() conform.format({ timeout_ms = 500, lsp_fallback = true, async = true, }) end";
+        action = "function() require('conform').format({ timeout_ms = 500, lsp_fallback = true, async = true, }) end";
         mode = ["n" "v"];
         lua = true;
         options = {
@@ -14,7 +14,7 @@
       }
       {
         key = "<leader>fs";
-        action = "function() conform.format({ timeout_ms = 500, lsp_fallback = true, async = true, }); vim.cmd.w() end";
+        action = "function() require('conform').format({ timeout_ms = 500, lsp_fallback = true, async = true, }); vim.cmd.w() end";
         mode = ["n" "v"];
         lua = true;
         options = {
@@ -39,7 +39,6 @@
         typescriptreact = ["prettier"];
         sh = ["shfmt"];
         nix = ["alejandra"];
-        #        nix = ["alejandra"];
       };
 
       formatOnSave = {
