@@ -20,10 +20,7 @@
   extraPlugins = with pkgs.vimPlugins; [
     promise-async
     lualine-lsp-progress
-    {
-      plugin = statuscol-nvim;
-      config = ''lua require('statuscol').setup() '';
-    }
+    statuscol-nvim
     {
       plugin = neodev-nvim;
       config = ''lua require('neodev').setup() '';
@@ -55,16 +52,16 @@
     todo-comments.enable = true;
 
     gitsigns = {
-	enable = true;
-	signs = {
-		add.text = "+";
-		change.text = "~";
-		changedelete.text = "␡";
-		delete.text = "-";
-		topdelete.text = "‾";
-		untracked.text = "?";
-	};
-	};
+      enable = true;
+      signs = {
+        add.text = "+";
+        change.text = "~";
+        changedelete.text = "␡";
+        delete.text = "-";
+        topdelete.text = "‾";
+        untracked.text = "?";
+      };
+    };
     # fugitive.enable = true;
     neogit.enable = true;
 
@@ -86,6 +83,6 @@
 
     markdown-preview.enable = true;
     crates-nvim.enable = true;
-	# codeium-vim.enable = true;
+    # codeium-vim.enable = true;
   };
 }
