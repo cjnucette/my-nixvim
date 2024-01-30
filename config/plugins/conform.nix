@@ -38,6 +38,7 @@
         javascriptreact = ["prettier"];
         typescriptreact = ["prettier"];
         sh = ["shfmt"];
+        nix = ["alejandra"];
         #        nix = ["alejandra"];
       };
 
