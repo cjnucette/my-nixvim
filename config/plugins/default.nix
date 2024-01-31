@@ -78,7 +78,14 @@
         surround = {};
         comment = {};
         pairs = {};
+        files = {};
       };
+    };
+
+    nvim-colorizer = {
+      enable = true;
+      fileTypes = ["*" "!markdown"];
+      userDefaultOptions = {mode = "virtualtext";};
     };
 
     markdown-preview.enable = true;
