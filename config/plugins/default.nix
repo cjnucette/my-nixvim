@@ -22,6 +22,7 @@
     promise-async
     lualine-lsp-progress
     statuscol-nvim
+    nvim-spectre
     {
       plugin = neodev-nvim;
       config = ''lua require('neodev').setup() '';

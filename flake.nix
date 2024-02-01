@@ -53,7 +53,11 @@
       url = "github:gera2ld/ai.nvim";
       flake = false;
     };
-	
+
+    nvim-spectre-src = {
+      url = "github:nvim-pack/nvim-spectre";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -113,6 +117,11 @@
           ai-nvim = final.vimUtils.buildVimPlugin {
             name = "ai-nvim";
             src = inputs.ai-nvim-src;
+          };
+
+          nvim-spectre = final.vimUtils.buildVimPlugin {
+            name = "nvim-spectre";
+            src = inputs.nvim-spectre-src;
           };
         };
     };

@@ -445,6 +445,22 @@
         "type": "github"
       }
     },
+    "nvim-spectre-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706234058,
+        "narHash": "sha256-TidSIYf0yQB/k/m1AVge5WSLiPS+styvloIAC4NOARI=",
+        "owner": "nvim-pack",
+        "repo": "nvim-spectre",
+        "rev": "d958cc3ea8b3fb2f0922dff6177630a40751a3a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-pack",
+        "repo": "nvim-spectre",
+        "type": "github"
+      }
+    },
     "nvim-ufo-src": {
       "flake": false,
       "locked": {
@@ -517,6 +533,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "nvim-spectre-src": "nvim-spectre-src",
         "nvim-ufo-src": "nvim-ufo-src",
         "oil-nvim-src": "oil-nvim-src",
         "statuscol-nvim-src": "statuscol-nvim-src"

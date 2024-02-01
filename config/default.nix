@@ -31,6 +31,20 @@
         { sign = { name = { '.*' }, maxwidth = 2, colwidth = 1, auto = true }, click = 'v:lua.ScSa' },
       }
     })
+
+    -- specter
+    require('spectre').setup({
+      result_padding = ' ',
+      default = {
+        replace = {
+          cmd = 'sed'
+        },
+      },
+    })
+    vim.keymap.set('n', '<leader>A', function() require("spectre").toggle() end, { noremap = true, silent = true, desc = "Spectre: Toggle Spectre" })
+    vim.keymap.set('n', '<leader>aw', function() require("spectre").open_visual({ select_word = true}) end, { noremap = true, silent = true, desc = "Spectre: Search current word" })
+    vim.keymap.set('v', '<leader>aw', function() require("spectre").open_visual() end, { noremap = true, silent = true, desc = "Spectre: Search selected word" })
+    vim.keymap.set('n', '<leader>af', function() require("spectre").open_file_search({ select_word = true}) end, { noremap = true, silent = true, desc = "Spectre: Search current file" })
   '';
 
   imports = [
