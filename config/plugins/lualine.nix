@@ -56,16 +56,19 @@ in {
 
         {
           name.__raw = ''
-                   function()
-                     local client_names = vim.lsp.get_active_clients({ bufnr = 0 })
-            local names = ""
+            function()
+              local hide = { "null-ls", "emmet_language_server" }
+              local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+              local names = ""
 
-            for _, name in ipair(client_names) do
-             names = names .. " " .. name
+              for _, client in ipairs(clients) do
+                if not vim.tbl_contains(hide, client.name) then
+                  names = names .. " " .. client.name
+                end
+              end
+
+               return vim.trim(names)
             end
-
-                     return names
-                   end
           '';
           # icon = " ";
           # color.fg = "#ffffff";
@@ -94,15 +97,15 @@ in {
         {
           name.__raw = ''
             function()
-			  local status = vim.fn["codeium#GetStatusString"]()
+               local status = vim.fn["codeium#GetStatusString"]()
 
-			  if status == ' ON' then
-				  return '󱃖'
-			  elseif status == 'OFF' then
-				  return '⦸'
-			  end
+               if status == ' ON' then
+                return '󱃖'
+               elseif status == 'OFF' then
+                return '⦸'
+               end
 
-			  return status
+               return status
             end
           '';
         }
