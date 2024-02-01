@@ -15,6 +15,7 @@
     ./conform.nix
     ./cmp.nix
     ./codeium.nix
+    ./gitsigns.nix
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
@@ -50,20 +51,6 @@
 
     barbecue.enable = true;
     todo-comments.enable = true;
-
-    gitsigns = {
-      enable = true;
-      signs = {
-        add.text = "+";
-        change.text = "~";
-        changedelete.text = "␡";
-        delete.text = "-";
-        topdelete.text = "‾";
-        untracked.text = "?";
-      };
-    };
-    # fugitive.enable = true;
-    neogit.enable = true;
 
     oil.enable = true;
     which-key.enable = true;
