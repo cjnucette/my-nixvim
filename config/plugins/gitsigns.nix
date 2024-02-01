@@ -23,6 +23,17 @@
           desc = "Gitsigns: [G]it [B]lame line";
         };
       }
+      {
+        key = "<leader>gg";
+        mode = "n";
+        action = "function() require('neogit').open({ kind = 'split'}) end";
+        lua = true;
+        options = {
+          silent = true;
+          noremap = true;
+          desc = "Neogit: [G]it [G]it";
+        };
+      }
     ];
 
     plugins = {
@@ -37,7 +48,10 @@
           untracked.text = "?";
         };
       };
-      neogit.enable = true;
+      neogit = {
+        enable = true;
+        autoRefresh = true;
+      };
     };
   };
 }
