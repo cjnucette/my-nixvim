@@ -15,13 +15,6 @@
       callback = {__raw = "function() vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 }) end";};
     }
     {
-      desc = "Setting for nix files";
-      group = "user_cmds";
-      event = ["BufEnter" "BufNewFile"];
-      pattern = ["*.nix"];
-      command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab";
-    }
-    {
       event = ["BufWinLeave" "BufWritePost" "WinLeave"];
       desc = "Save view with mkview for real files";
       group = "user_cmds";
@@ -52,6 +45,20 @@
           end
         '';
       };
+    }
+    {
+      desc = "Setting for nix files";
+      group = "user_cmds";
+      event = ["BufEnter" "BufNewFile"];
+      pattern = ["*.nix"];
+      command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab";
+    }
+    {
+      desc = "Setting for markdown files";
+      group = "user_cmds";
+      event = ["BufEnter" "BufNewFile"];
+      pattern = ["*.md"];
+      command = "setlocal conceallevel=2 wrap linebreak breakindent";
     }
   ];
 }
