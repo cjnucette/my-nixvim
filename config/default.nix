@@ -45,6 +45,20 @@
     vim.keymap.set('n', '<leader>aw', function() require("spectre").open_visual({ select_word = true}) end, { noremap = true, silent = true, desc = "Spectre: Search current word" })
     vim.keymap.set('v', '<leader>aw', function() require("spectre").open_visual() end, { noremap = true, silent = true, desc = "Spectre: Search selected word" })
     vim.keymap.set('n', '<leader>af', function() require("spectre").open_file_search({ select_word = true}) end, { noremap = true, silent = true, desc = "Spectre: Search current file" })
+
+    -- read aloud mapping
+    local say = function()
+      local uv = vim.loop
+      local handle
+      local on_exit = function()
+        if handle then
+          uv.close(handle)
+        end
+      end
+
+      handle = uv.spawn('say', { args = { vim.fn.getline('.') } }, on_exit)
+    end
+    vim.keymap.set('n', '<leader>r', function() say() end, { silent = true, noremap = true, desc = '[R]ead aloud the current line' })
   '';
 
   imports = [

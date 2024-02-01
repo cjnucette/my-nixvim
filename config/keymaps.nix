@@ -1,4 +1,9 @@
-{
+let
+  opts = {
+    silent = true;
+    noremap = true;
+  };
+in {
   globals = {
     mapleader = " ";
     maplocalleader = " ";
@@ -9,49 +14,44 @@
       mode = "v";
       key = "<";
       action = "<gv";
-      options.silent = true;
+      options = opts;
     }
     {
       mode = "v";
       key = ">";
       action = ">gv";
-      options.silent = true;
+      options = opts;
     }
     {
       mode = "n";
       key = "<tab>";
       action = "<cmd>bn<cr>";
-      options.silent = true;
+      options = opts;
     }
     {
       mode = "n";
       key = "<s-tab>";
       action = "<cmd>bp<cr>";
-      options.silent = true;
+      options = opts;
     }
     {
       mode = "n";
       key = "-";
       action = "<cmd>Oil --float<cr>";
-      options.silent = true;
+      options = opts;
     }
     {
       mode = "n";
       key = "<leader>w";
-      action = ":w<cr>";
-      options = {
-        silent = true;
-        desc = "Save buffer";
-      };
+      action = "vim.cmd.w";
+      lua = true;
+      options = opts // {desc = "Save buffer";};
     }
     {
       mode = "n";
       key = "<leader>u";
       action = "gUawel";
-      options = {
-        silent = true;
-        desc = "Toggle capitalization of word under the cursor";
-      };
+      options = opts // {desc = "Toggle capitalization of word under the cursor";};
     }
     {
       mode = "n";
@@ -75,46 +75,31 @@
       mode = "v";
       key = "<a-j>";
       action = ":m '>+1<CR>gv=gv";
-      options = {
-        silent = true;
-        desc = "Move current line up, keeping indentation and selection";
-      };
+      options = opts // {desc = "Move current line up, keeping indentation and selection";};
     }
     {
       mode = "v";
       key = "<a-k>";
       action = ":m '<-2<CR>gv=gv";
-      options = {
-        silent = true;
-        desc = "Move current line up, keeping indentation and selection";
-      };
+      options = opts // {desc = "Move current line up, keeping indentation and selection";};
     }
     {
       mode = "n";
       key = "<a-j>";
       action = ":m .+1<CR>==";
-      options = {
-        silent = true;
-        desc = "Move current line down keeping indentation";
-      };
+      options = opts // {desc = "Move current line down keeping indentation";};
     }
     {
       mode = "n";
       key = "<a-k>";
       action = ":m .-2<CR>==";
-      options = {
-        silent = true;
-        desc = "Move current line up keeping indentation";
-      };
+      options = opts // {desc = "Move current line up keeping indentation";};
     }
     {
       mode = "n";
       key = "<F1>";
       action = ":help <C-r><C-w><CR>";
-      options = {
-        silent = true;
-        desc = "Find help for the word under the cursor";
-      };
+      options = opts // {desc = "Find help for the word under the cursor";};
     }
   ];
 }
