@@ -54,10 +54,10 @@
       command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab";
     }
     {
-      desc = "Setting for markdown files";
+      desc = "Setting for markdown and text files";
       group = "user_cmds";
       event = ["BufEnter" "BufNewFile"];
-      pattern = ["*.md"];
+      pattern = ["*.md" "*.txt"];
       command = "setlocal conceallevel=2 wrap linebreak breakindent";
     }
   ];
